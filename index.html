@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pterodactyl Admin Panel - Purchase</title>
+  <link rel="stylesheet" href="public/cjs.css">
+</head>
+<body>
+<!-- Rules Section -->
+<div class="rules-section">
+  <div class="rules-header">
+    <div class="rules-icon">📜</div>
+    <h2 class="rules-title">Peraturan Pterodactyl Admin Panel</h2>
+  </div>
+  <ul class="rules-list">
+    <li>Dilarang menyalahgunakan panel admin untuk aktivitas ilegal</li>
+    <li>Akses panel hanya untuk pemilik sah <span class="important-badge">Penting</span></li>
+    <li>Dilarang memodifikasi sistem tanpa izin</li>
+    <li>Lakukan backup data server secara berkala</li>
+    <li>Pengguna bertanggung jawab penuh atas penggunaan panel</li>
+  </ul>
+  <div class="rules-note">
+    ⚠️ Melanggar peraturan dapat menyebabkan akses dicabut tanpa refund.
+  </div>
+  <div class="rules-footer">
+    <button class="rules-accept" onclick="acceptRules()">Saya Setuju</button>
+  </div>
+</div>
+
+<!-- Welcome -->
+<div class="welcome-screen" id="welcomeScreen">
+  <div class="floating-elements">
+    <div class="floating-element" style="width: 30px; height: 30px; top: 20%; left: 10%;"></div>
+    <div class="floating-element" style="width: 20px; height: 20px; top: 30%; left: 60%;"></div>
+  </div>
+  <div class="welcome-logo">🚀</div>
+  <h1 class="welcome-title">Pterodactyl Admin Panel</h1>
+  <p class="welcome-subtitle">Beli akses admin panel dengan mudah</p>
+  <button class="buy-btn" onclick="showProductSection()">BELI SEKARANG</button>
+</div>
+
+<!-- Produk -->
+<div class="product-section" id="productSection">
+  <button class="back-btn" onclick="backToWelcome()">⬅️ Kembali</button>
+  <h2>✨ PRODUK PANEL ✨</h2>
+  <select id="produkSelect" onchange="showPaymentForm()">
+    <option value="">Pilih Paket</option>
+    <option value="PANEL-1|10000">PANEL-1 (1 Bulan) - Rp10.000</option>
+    <option value="PANEL-3|25000">PANEL-3 (3 Bulan) - Rp25.000</option>
+  </select>
+</div>
+
+<!-- Pembayaran -->
+<div class="payment-form" id="paymentForm" style="display:none">
+  <h2>🛒 Checkout</h2>
+  <p>Email:</p>
+  <input type="email" id="email" placeholder="you@example.com"><br>
+  <button onclick="startPayment()">🔁 Bayar Sekarang</button>
+  <div id="qrSection" style="display:none">
+    <p>Scan QRIS:</p>
+    <img id="qrImage" src="" width="200"><br>
+    <small id="qrImageUrl"></small>
+  </div>
+</div>
+
+<script src="public/cjs.js"></script>
+</body>
+</html>
